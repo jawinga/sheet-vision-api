@@ -1,11 +1,10 @@
-package com.sheetvision.sheetvision.api.repository;
+package com.sheetvision.sheetvision.api.bootstrap;
 
 import com.sheetvision.sheetvision.api.model.Dataset;
+import com.sheetvision.sheetvision.api.repository.DatasetRepository;
+import com.sheetvision.sheetvision.api.config.SeedConfig;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
-
-
-import java.util.List;
 
 @Component
 public class DataLoader {
@@ -21,7 +20,7 @@ public class DataLoader {
     @PostConstruct
     private void loadData() {
 
-       if(!seedConfig.isEnabled()){
+       if(seedConfig.isEnabled()){
 
            for (int i = 1; i<=seedConfig.getRows(); i++){
 

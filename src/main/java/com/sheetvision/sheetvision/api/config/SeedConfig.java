@@ -1,4 +1,4 @@
-package com.sheetvision.sheetvision.api.repository;
+package com.sheetvision.sheetvision.api.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

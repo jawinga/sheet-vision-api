@@ -3,9 +3,11 @@ package com.sheetvision.sheetvision.api.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
 
 import java.time.LocalDateTime;
 
+@Entity
 public class Dataset {
 
     @Id
