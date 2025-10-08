@@ -1,63 +1,74 @@
 package com.sheetvision.sheetvision.api.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+@Getter
 @Entity
+@Table (name = "dataset")
 public class Dataset {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String filename;
 
-    private String contentType;
+    private String filename; //DTO
 
-    public Long getId() {
-        return id;
+    @ElementCollection
+    @CollectionTable(name = "dataset_columns", joinColumns = @JoinColumn(name = "dataset_id"))
+    @Column(name = "column_name")
+    private List<String>columns = new ArrayList<>();
+
+    private String contentType; //DTO
+
+    private long size; //DTO
+
+    private LocalDateTime uploadedAt = LocalDateTime.now(); //DTO
+
+    private String storagePath;
+
+    private String uploadedBy;
+
+    private String status;
+
+    private Integer rowCount; //DTO
+
+
+    public void setStoragePath(String storagePath) {
+        this.storagePath = storagePath;
+    }
+
+    public void setUploadedBy(String uploadedBy) {
+        this.uploadedBy = uploadedBy;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getFilename() {
-        return filename;
-    }
-
     public void setFilename(String filename) {
         this.filename = filename;
-    }
-
-    public String getContentType() {
-        return contentType;
     }
 
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
 
-    public long getSize() {
-        return size;
-    }
-
     public void setSize(long size) {
         this.size = size;
-    }
-
-    public LocalDateTime getUploadedAt() {
-        return uploadedAt;
     }
 
     public void setUploadedAt(LocalDateTime uploadedAt) {
         this.uploadedAt = uploadedAt;
     }
 
-    private long size;
 
-    private LocalDateTime uploadedAt = LocalDateTime.now();
 }
