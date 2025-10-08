@@ -7,5 +7,5 @@ public record DatasetDTO(
         String name,
         List<String> columns,
         Integer rowCount,
-        LocalDateTime createdAt
+        LocalDateTime uploadedAt
 ) {}

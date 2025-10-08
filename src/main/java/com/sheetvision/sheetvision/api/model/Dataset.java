@@ -18,6 +18,14 @@ public class Dataset {
 
     private String filename; //DTO
 
+    public List<String> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<String> columns) {
+        this.columns = columns;
+    }
+
     @ElementCollection
     @CollectionTable(name = "dataset_columns", joinColumns = @JoinColumn(name = "dataset_id"))
     @Column(name = "column_name")
@@ -34,6 +42,14 @@ public class Dataset {
     private String uploadedBy;
 
     private String status;
+
+    public Integer getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(Integer rowCount) {
+        this.rowCount = rowCount;
+    }
 
     private Integer rowCount; //DTO
 
