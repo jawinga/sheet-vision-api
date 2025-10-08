@@ -1,11 +1,18 @@
 package com.sheetvision.sheetvision.api.model;
+
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-public record DatasetDTO(
-        Long id,
+public record DatasetPreviewDTO(
+
         String name,
         List<String> columns,
         Integer rowCount,
-        LocalDateTime createdAt
-) {}
+        LocalDateTime createdAt,
+        String contentType,
+
+        List<List<Object>> sampleRows
+
+) {
+}
