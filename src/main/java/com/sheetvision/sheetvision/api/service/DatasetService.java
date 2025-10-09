@@ -5,8 +5,9 @@ import com.sheetvision.sheetvision.api.model.Dataset;
 import com.sheetvision.sheetvision.api.model.DatasetCreateDTO;
 import com.sheetvision.sheetvision.api.model.DatasetDTO;
 import com.sheetvision.sheetvision.api.repository.DatasetRepository;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class DatasetService {
 
     private final DatasetRepository datasetRepository;

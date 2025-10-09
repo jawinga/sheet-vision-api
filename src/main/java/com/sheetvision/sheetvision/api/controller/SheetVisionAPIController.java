@@ -1,7 +1,9 @@
 package com.sheetvision.sheetvision.api.controller;
 
+import com.sheetvision.sheetvision.api.mapper.DatasetMapper;
 import com.sheetvision.sheetvision.api.model.Dataset;
 import com.sheetvision.sheetvision.api.repository.DatasetRepository;
+import com.sheetvision.sheetvision.api.service.DatasetService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,10 @@ import java.util.Optional;
 @RequestMapping("/dataset")
 public class SheetVisionAPIController {
 
+    private DatasetService datasetService;
+
+    private DatasetMapper datasetMapper;
+
     private final DatasetRepository datasetRepository;
 
     public SheetVisionAPIController(DatasetRepository datasetRepository){
@@ -20,7 +26,6 @@ public class SheetVisionAPIController {
         this.datasetRepository = datasetRepository;
 
     }
-
 
     @GetMapping
     Iterable<Dataset> getDataset(){
