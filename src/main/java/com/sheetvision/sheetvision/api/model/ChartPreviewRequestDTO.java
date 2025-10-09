@@ -13,7 +13,7 @@ public record ChartPreviewRequestDTO(
         @NotBlank String xField,               // column for X
         @NotBlank String aggregation,          // "sum" | "avg" | "count" | "weighted_avg"
 
-        List<String> yFields,
+        @NotEmpty List<String> yFields,
 
         @NotNull @NotEmpty List<Map<String,Object>> rows,  // parsed rows (from FE)
 

@@ -17,9 +17,10 @@ public class ApiExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleValidation(MethodArgumentNotValidException ex) {
         Map<String, Object> body = new HashMap<>();
         Map<String, String> errors = new HashMap<>();
-        for (FieldError fe : ex.getBindingResult().getFieldErrors()) {
-            errors.put(fe.getField(), fe.getDefaultMessage());
-        }
+        ex.getBindingResult().getAllErrors().forEach(err -> {
+            String field = ((FieldError) err).getField();
+            errors.put(field, err.getDefaultMessage());
+        });
         body.put("message", "Validation failed");
         body.put("errors", errors);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
