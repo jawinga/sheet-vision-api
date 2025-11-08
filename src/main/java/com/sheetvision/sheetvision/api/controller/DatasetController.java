@@ -25,6 +25,9 @@ public class DatasetController {
         return ResponseEntity.ok(datasetService.getAllDatasets());
     }
 
+    public DatasetController(DatasetService datasetService) {
+        this.datasetService = datasetService;
+    }
     //get dataset by id
 
     @GetMapping("/{id}")

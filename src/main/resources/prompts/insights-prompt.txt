@@ -1,0 +1,22 @@
+You are a data analysis expert. Analyze the following dataset and infer meaningful insights.
+
+Dataset name: {filename}
+Sheet: {sheetName}
+Columns: {columns}
+Total Rows: {rowCount}
+
+Full Data:
+{rows}
+
+Sample Rows:
+{sampleRows}
+
+Analyze patterns, correlations, and outliers. Use numeric reasoning if numbers are present; otherwise detect qualitative patterns.
+If insufficient data for a category, write "insufficient data".
+
+Return ONLY valid JSON (no markdown, no text) strictly in this format:
+{
+  "trends": "summarize major trends, correlations, or patterns observed",
+  "anomalies": ["list of notable anomalies or outliers (can be empty)"],
+  "recommendations": "actionable insights or next steps derived from the analysis"
+}

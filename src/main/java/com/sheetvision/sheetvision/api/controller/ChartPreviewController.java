@@ -19,6 +19,10 @@ public class ChartPreviewController {
 
     private final ChartPreviewService chartPreviewService;
 
+    public ChartPreviewController(ChartPreviewService chartPreviewService) {
+        this.chartPreviewService = chartPreviewService;
+    }
+
     @PostMapping(path = "/preview",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
