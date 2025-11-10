@@ -30,7 +30,7 @@ public class ProdSecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "https://sheet-vision-nnmccwiel-cristians-projects-399d0222.vercel.app"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "https://sheet-vision-app.vercel.app/", "https://sheet-vision-app-git-main-cristians-projects-399d0222.vercel.app" , "https://sheet-vision-nnmccwiel-cristians-projects-399d0222.vercel.app"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
