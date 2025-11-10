@@ -16,7 +16,7 @@ public class ProdSecurityConfig {
         http.csrf(csrf -> csrf.disable());
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers("/actuator/**").permitAll()
-                .requestMatchers("/api/charts/**", "/api/datasets/**").permitAll()
+                .requestMatchers("/api/charts/**", "/api/datasets/**", "/api/insights/**").permitAll()
                 .anyRequest().authenticated()
         );
         http.httpBasic(Customizer.withDefaults());
