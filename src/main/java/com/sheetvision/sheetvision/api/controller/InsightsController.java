@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.*;
 public class InsightsController {
 
     private final AnthropicService anthropicService;
-    public InsightsController(AnthropicService anthropicService) {
-        this.anthropicService = anthropicService;
-    }
+
 
     @PostMapping
     public ResponseEntity<InsightsResponseDTO> getInsights(@Valid  @RequestBody InsightsRequestDTO request) {
